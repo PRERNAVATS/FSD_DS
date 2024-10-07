@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.item{
+    background-color: green;
+    color: aqua;
+    height: 200px;
+    width: 200px;
+    border:5px solid green;
+    font-size: 20px;
+    margin:10px
+}
+.container{
+    border: 5px solid black;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.item2{
+    order:3;
+    flex-grow:2
+}
