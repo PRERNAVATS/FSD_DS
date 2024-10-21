@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventify Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            width: 85%;
+            max-width: 1000px;
+            height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+
+        .left-panel {
+            background-color: #2c2d3f;
+            color: white;
+            width: 40%;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .right-panel {
+            width: 60%;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Custom Google and Facebook buttons */
+        .btn-social {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-google {
+            background-color: #fff;
+            border: 1px solid #db4a39;
+            color: #db4a39;
+        }
+
+        .btn-google:hover {
+            background-color: #f7e7e7;
+        }
+
+        .btn-facebook {
+            background-color: #4267B2;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-facebook:hover {
+            background-color: #365899;
+        }
+
+        .btn-social img {
+            margin-right: 10px;
+            height: 20px; /* Adjust the height for better alignment */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: #ddd;
+        }
+
+        .divider span {
+            margin: 0 15px;
+            color: #888;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ccc;
+            box-shadow: none;
+        }
+
+        .form-control:focus {
+            border-color: #2c2d3f;
+            box-shadow: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            background-color: #2c2d3f;
+            color: white;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #181a24;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 30px;
+            top: 260px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        /* Left panel text styles */
+        .left-panel h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .left-panel p {
+            font-size: 18px;
+        }
+
+        /* Sign up link */
+        .signup-link {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .signup-link a {
+            color: #2c2d3f;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Close icon */
+        .close-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .left-panel, .right-panel {
+                width: 100%;
+                padding: 30px;
+            }
+
+            .login-box {
+                max-width: 100%;
+            }
+
+            .toggle-password {
+                top: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel -->
+        <div class="left-panel">
+            <h1>Eventify</h1>
+            <p>Discover tailored events.<br>Sign in for personalized recommendations today!</p>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="right-panel">
+            <!-- Close icon -->
+            <span class="close-icon">&times;</span>
+            <div class="login-box">
+                <h2>Login</h2>
+                <!-- Social Login Buttons -->
+                <button class="btn btn-google btn-social">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google">
+                    Sign up with Google
+                </button>
+                <button class="btn btn-facebook btn-social">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+                    Sign up with Facebook
+                </button>
+
+                <!-- Divider -->
+                <div class="divider"><span>OR</span></div>
+
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <input type="email" class="form-control" id="email" placeholder="E-mail Address" required>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <span class="toggle-password">👁️</span>
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <!-- Sign-up link -->
+                <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FontAwesome (for Facebook icon) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Password toggle script -->
+    <script>
+        // Password visibility toggle
+        const togglePassword = document.querySelector('.toggle-password');
+        const password = document.getElementById('password');
+        
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+        });
+
+        // Close button functionality
+        document.querySelector('.close-icon').addEventListener('click', function() {
+            window.close(); // Closes the window (if supported by the browser)
+        });
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            alert(`Logging in with ${email}`);
+        });
+    </script>
+</body>
+</html>
