@@ -10,12 +10,7 @@ let success = true;
 },2000);
 });
  
-my.then((message)=>{
-    console.log("recieved "+ message);
-})
-.catch((error)=>{
-    console.log("failed "+ error);
-})
+  
 
 
 //resolove promise 
