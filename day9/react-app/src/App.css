@@ -1,0 +1,12 @@
+#disp {
+border: 10px solid green;
+background-color: yellowgreen;
+border-radius: 10px;
+width:50%;
+}
+h1{
+  background-color: aqua;
+}
+h2{
+  background-color: blueviolet;
+}
