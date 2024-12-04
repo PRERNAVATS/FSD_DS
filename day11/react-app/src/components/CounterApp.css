@@ -1,0 +1,107 @@
+button {
+    background: #fbca1f;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 900;
+    font-size: 18px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+    margin-right: 50px;
+}
+  
+button:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+  
+button:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+/* From Uiverse.io by dylanharriscameron */ 
+.card {
+    position: relative;
+    width: 1000px;
+    height: 350px;
+    border-radius: 14px;
+    z-index: 11;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    
+}
+
+.parent{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.disp{
+    position: relative;
+    z-index: 111111;
+    
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 990px;
+    height: 340px;
+    z-index: 2;
+    background: rgba(255, 255, 255, .95);
+    backdrop-filter: blur(24px);
+    border-radius: 10px;
+    overflow: hidden;
+    outline: 2px solid white;
+}
+  
+.blob {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 950px;
+    height: 340px;
+    border-radius: 50%;
+    background-color: #ff9d00;
+    opacity: 1;
+    filter: blur(12px);
+    animation: blob-bounce 5s infinite ease;
+}
+  
+@keyframes blob-bounce {
+    0% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+  
+    25% {
+      transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+    }
+  
+    50% {
+      transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+    }
+  
+    75% {
+      transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      transform: translate(-100%, -100%) translate3d(0, 0, 0);
+    }
+}
+  
